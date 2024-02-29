@@ -1,12 +1,8 @@
 data "aws_caller_identity" "current" {}
 
-provider "aws" {}
-
-locals {
-  name    = "nsus-cluster"
-  region  = "ap-northeast-2"
+provider "aws" {
+    region = "ap-northeast-2"
 }
-
 
 ################################################################################
 # VPC & Security Module
