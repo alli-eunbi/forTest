@@ -4,7 +4,7 @@ terraform {
     organization = "supertone"
 
     workspaces {
-      name = "honglab-tf-backend-vpc"
+      name = "forTest"
     }
   }
 }
