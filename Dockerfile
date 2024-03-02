@@ -1,7 +1,7 @@
 FROM node:21.6.2-alpine
 
-COPY . /
-WORKDIR /
+COPY . /tmp
+WORKDIR /tmp
 
 RUN yarn
 

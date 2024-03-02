@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: test
-          image: 339713114514.dkr.ecr.ap-northeast-2.amazonaws.com/supertone:latest
+          image: 339713114514.dkr.ecr.ap-northeast-2.amazonaws.com/supertone:1
           ports:
             - containerPort: 80
