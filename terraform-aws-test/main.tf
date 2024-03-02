@@ -202,18 +202,35 @@ module "eks" {
 
 
   eks_managed_node_group_defaults = {
-    ami_type       = "AL2_x86_64"
-    instance_types = ["t3.medium"]
-    min_size = 2
-    max_size = 3
-
+    ami_type               = "AL2_x86_64"
+    disk_size              = 10           
+    instance_types         = ["t2.small"]
     tags ={
       Name = "default-node-group"
     }
-
   }
+
+
+  eks_managed_node_groups = {
+    supertone-node-group = {
+      min_size = 2
+      max_size = 3
+      desired_size = 2
+      disk_size = 20
+
+      labels = {
+        ondemand = "true"
+      }
+
+      # 생성되는 인스턴스에 tag추가
+      tags = {
+        "k8s.io/cluster-autoscaler/enabled" : "true"
+        "k8s.io/cluster-autoscaler/${local.name}" : "true"
+      }
+    }
   tags = {
     Name = "supertone-cluster"
   }
+   }
 
 }

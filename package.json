@@ -1,0 +1,15 @@
+{
+  "scripts": {
+    "build": "tsc",
+    "generate": "./generate-client.sh",
+    "start": "ts-node ./src/app.ts"
+  },
+  "dependencies": {
+    "@kubernetes/client-node": "^0.20.0",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}
