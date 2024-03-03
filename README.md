@@ -2,8 +2,10 @@
 
 ## Todo
 
-1. rds 접속 pod 생성
-2. slow query 명령어
-3. slow query ip 주소 체크
-4. prometheus-kube-stack 설치 및 scrape config 설정
-5. prometheus에서 모델링에 필요한 최소 정보를 가지고 있는지 확인.
+1. namespace 전체적으로 pod 조회하도록
+2. DB 다이어그램 작성 및 각각의 데이터 정의
+3. watch-api로 변경시마다 감지하도록 설정
+
+## 시간상 가능하면,
+
+Backstage.io로 검색 가능한 대시보드 작성
