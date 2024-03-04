@@ -12,6 +12,7 @@ const watch = new k8s.Watch(kc);
 
 const main = async () => {
   try {
+    const namespaces = await k8sApi.listNamespace();
     const podsRes = await k8sApi.listNamespacedPod("default");
     // console.log(podsRes.body.items[0].status);s
     const items = podsRes.body.items;
@@ -33,7 +34,7 @@ const main = async () => {
   }
 };
 
-async function eniInfo(nodeName: string): Promise<void> {
+async function eniInfo(privateIp: string): Promise<void> {
   const ec2 = new EC2({ region: "ap-northeast-2" });
 
   try {
@@ -41,7 +42,7 @@ async function eniInfo(nodeName: string): Promise<void> {
       Filters: [
         {
           Name: "private-ip-address",
-          Values: [nodeName],
+          Values: [privateIp],
         },
       ],
     };
